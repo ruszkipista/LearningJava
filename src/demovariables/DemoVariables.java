@@ -180,7 +180,7 @@ public class DemoVariables {
 
 //    comparison operators: on primitive variables their value is compared
 //                          on complex variables their pointer is compared
-//          !   nega
+//          !   negate a boolean value
 //          ==  equal
 //          !=  not equal
 //          >=  greater than or equal
