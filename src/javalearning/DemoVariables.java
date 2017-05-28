@@ -31,7 +31,7 @@ public class DemoVariables {
 //      ?:            Ternary (short-hand for if-then) if expression is true, assign
 //                    value after ? to variable, else assign value after :
         String sTern = (1 != 2) ? "trueValue" : "falseValue"; //="trueValue"
-        
+
 //    parse character literal into boolean value
         boolean bParsed = Boolean.parseBoolean("true");
 //    demonstrate double quote character " escaped in print as \u201c and \u201d
@@ -161,17 +161,14 @@ public class DemoVariables {
         System.out.println("absolute value of " + doubleValue + " is " + result7); //3.99999
 
 //        +                      concatenation of two strings
-
 //    Unary Operators
 //        <variable>++           increase variable by 1
 //        <variable>--           decrease variable by 1
-
 //     Compound assignments
 //        <variable>+= <var>     increase variable with value
 //        <variable>-= <var>     decrease variable with value
 //        <variable>*= <var>     multiply variable by value
 //        <variable>/= <var>     divide variable by value
-
 //      postfix incremention: print 56 and increase to 57
         System.out.print("print and increase: " + intValue1++);
         System.out.println(", new value: " + intValue1);
@@ -188,7 +185,6 @@ public class DemoVariables {
 //          >   greater than
 //          <   less than
 //   instanceof Class membership
-
 //    demonstrate expression evaluation
         boolean bExpr = (1 == 2); //=false
         System.out.println("Evaluated expression (1 == 2) as: " + bExpr);
@@ -210,7 +206,7 @@ public class DemoVariables {
 //           ^  exclusive OR operation
 //           |  inclusive OR operation
         int bitmask = 0x000F;
-        int val     = 0x2222;
+        int val = 0x2222;
         // prints "2"
         System.out.println(val & bitmask);
 
@@ -242,7 +238,34 @@ public class DemoVariables {
         for (char c : cArray2) {
             System.out.println(c);
         }
-        
+//      demonstrate string array list
+        //Some Olympic sports 
+        ArrayList<String> olympicSports = new ArrayList<String>();
+        olympicSports.add("Archery");
+        olympicSports.add("Boxing");
+        olympicSports.add("Cricket");
+        olympicSports.add("Diving");
+
+        System.out.println("There are " + olympicSports.size() + " Olympic sports in this list. They are: ");
+        for (String sport : olympicSports) {
+            System.out.println(sport);
+        }
+
+//      demonstrate hash map list
+        //Host cities and the year they hosted the summer Olympics
+        HashMap<String, Integer> hostCities = new HashMap<String, Integer>();
+        hostCities.put("Beijing", 2008);
+        hostCities.put("London", 2012);
+        hostCities.put("Rio de Janeiro", 2016);
+
+        for (String city : hostCities.keySet()) {
+            if (hostCities.get(city) < 2016) {
+                System.out.println(city + " hosted the summer Olympics in " + hostCities.get(city) + ".");
+            } else {
+                System.out.println(city + " will host the summer Olympics in " + hostCities.get(city) + ".");
+            }
+        }
+
 //demonstrate structure type realized with class
         Data data1 = new Data(1, 5);
         Data data2 = new Data(2, 4);
@@ -257,9 +280,12 @@ public class DemoVariables {
 }
 //demonstrate structure type constructed with class
 //to address mutability concerns x and y declared as final
+
 class Data {
+
     public final int x;
     public final int y;
+
     public Data(int x, int y) {
         this.x = x;
         this.y = y;
