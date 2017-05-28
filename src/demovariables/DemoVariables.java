@@ -1,7 +1,7 @@
 /*
  * Demonstrate usage and limits of primitive variables
  */
-package demovariables;
+package javalearning;
 
 import java.math.BigDecimal;
 
@@ -21,8 +21,17 @@ public class DemoVariables {
         System.out.println("Default Boolean variable value: " + bValUnass); //=false
         boolean bValue1 = true;
         System.out.println("Boolean variable true value: " + bValue1);
+//      !      inverts (negatea) the value of a boolean
         bValue1 = !bValue1; //negates into true
         System.out.println("negated Boolean variable: " + bValue1);
+
+//    logical operators: <expression1> operator <expression2>
+//      &&            AND
+//      ||            OR
+//      ?:            Ternary (short-hand for if-then) if expression is true, assign
+//                    value after ? to variable, else assign value after :
+        String sTern = (1 != 2) ? "trueValue" : "falseValue"; //="trueValue"
+        
 //    parse character literal into boolean value
         boolean bParsed = Boolean.parseBoolean("true");
 //    demonstrate double quote character " escaped in print as \u201c and \u201d
@@ -151,12 +160,18 @@ public class DemoVariables {
         double result7 = Math.abs(doubleValue);
         System.out.println("absolute value of " + doubleValue + " is " + result7); //3.99999
 
-//    math operators: <variable>++       increase variable by 1
-//                    <variable>--       decrease variable by 1
-//                    <variable>+= <var> increase variable by value
-//                    <variable>-= <var> decrease variable by value
-//                    <variable>*= <var> multiply variable by value
-//                    <variable>/= <var> divide variable by value
+//        +                      concatenation of two strings
+
+//    Unary Operators
+//        <variable>++           increase variable by 1
+//        <variable>--           decrease variable by 1
+
+//     Compound assignments
+//        <variable>+= <var>     increase variable with value
+//        <variable>-= <var>     decrease variable with value
+//        <variable>*= <var>     multiply variable by value
+//        <variable>/= <var>     divide variable by value
+
 //      postfix incremention: print 56 and increase to 57
         System.out.print("print and increase: " + intValue1++);
         System.out.println(", new value: " + intValue1);
@@ -164,7 +179,8 @@ public class DemoVariables {
         System.out.println("decrease and print: " + --intValue1);
 
 //    comparison operators: on primitive variables their value is compared
-//                          on complex variables their ponter is compared
+//                          on complex variables their pointer is compared
+//          !   nega
 //          ==  equal
 //          !=  not equal
 //          >=  greater than or equal
@@ -172,6 +188,7 @@ public class DemoVariables {
 //          >   greater than
 //          <   less than
 //   instanceof Class membership
+
 //    demonstrate expression evaluation
         boolean bExpr = (1 == 2); //=false
         System.out.println("Evaluated expression (1 == 2) as: " + bExpr);
@@ -179,16 +196,24 @@ public class DemoVariables {
 //    demonstrate instanceof operator
         String sHello = "Hello";
         if (sHello instanceof java.lang.String) {
-            System.out.println("s is a String");
+            System.out.println("sHello variable is a String");
         }
 
-//    logical operators: <expression1> operator <expression2>
-//          &&  AND
-//          ||  OR
-//          ?:  Ternary (short-hand for if-then) if expression is true, assign
-//                to variable the value after ?, else assign value after :
-        String sTern = (1 != 2) ? "trueValue" : "falseValue"; //="trueValue"
-
+//    Bit Shift Operators: <integral type variable> operator <number of shifts>
+//          <<  signed left shift (circular) operator 
+//          >>  signed right shift (circular) operator
+//          <<< unsigned left shift (0 padding at left) operator 
+//          >>> unsigned right shift (0 padding at right) operator 
+//    Bitwise and Bit Shift Operators: <integral type variable1> operator <integral type variable2>
+//           ~  unary bitwise complement operator, inverts a bit pattern
+//           &  bitwise AND operation
+//           ^  exclusive OR operation
+//           |  inclusive OR operation
+        int bitmask = 0x000F;
+        int val     = 0x2222;
+        // prints "2"
+        System.out.println(val & bitmask);
+        
 //demonstrate structure type realized with class
         Data data1 = new Data(1, 5);
         Data data2 = new Data(2, 4);
