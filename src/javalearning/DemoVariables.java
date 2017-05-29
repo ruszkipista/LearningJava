@@ -19,7 +19,7 @@ public class DemoVariables {
     public static void main(String[] args) {
         System.out.println("Hello World from Java!");
 
-//    boolean type        
+//    boolean type
         System.out.println("Default Boolean variable value: " + bValUnass); //=false
         boolean bValue1 = true;
         System.out.println("Boolean variable true value: " + bValue1);
@@ -62,7 +62,7 @@ public class DemoVariables {
 //    binary integer literal
         bt = 0b0000_1101; //=decimal 11
 
-//    short (integral) type on 2 bytes, range of [-2^15...2^15-1]        
+//    short (integral) type on 2 bytes, range of [-2^15...2^15-1]
         short sh = Short.MIN_VALUE; //= -32768 //MAX_VALUE= 32767
         System.out.println("Short minimum: " + sh);
         //   decrease variable by 1
@@ -79,7 +79,7 @@ public class DemoVariables {
 //    2147483647+1 turns into -2147483648 without error message or exception
         System.out.println("Int minimum (MAX+1): " + i);
 
-//    long (integral) type on 8 bytes, range of [-2^63...2^63-1]        
+//    long (integral) type on 8 bytes, range of [-2^63...2^63-1]
         long lg = Long.MIN_VALUE; //= -9223372036854775808 //MAX_VALUE= 9223372036854775807
         System.out.println("Long minimum: " + lg);
         //   decrease variable by 1
@@ -106,7 +106,7 @@ public class DemoVariables {
         System.out.println("Double minimum positive non-zero : " + db);
 //    a floating-point literal is type of double by default
         db = 13.57;
-//    and it can optionally be suffixed with an ASCII letter D or d 
+//    and it can optionally be suffixed with an ASCII letter D or d
         db = 13.57d;
         db = 2d;
 
@@ -174,7 +174,7 @@ public class DemoVariables {
 //      postfix incremention: print 56 and increase to 57
         System.out.print("print and increase: " + intValue1++);
         System.out.println(", new value: " + intValue1);
-//      prefix decrementation      
+//      prefix decrementation
         System.out.println("decrease and print: " + --intValue1);
 
 //    comparison operators: on primitive variables their value is compared
@@ -198,10 +198,10 @@ public class DemoVariables {
         }
 
 //    Bit Shift Operators: <integral type variable> operator <number of shifts>
-//          <<  signed left shift (circular) operator 
+//          <<  signed left shift (circular) operator
 //          >>  signed right shift (circular) operator
-//          <<< unsigned left shift (0 padding at left) operator 
-//          >>> unsigned right shift (0 padding at right) operator 
+//          <<< unsigned left shift (0 padding at left) operator
+//          >>> unsigned right shift (0 padding at right) operator
 //    Bitwise and Bit Shift Operators: <integral type variable1> operator <integral type variable2>
 //           ~  unary bitwise complement operator, inverts a bit pattern
 //           &  bitwise AND operation
@@ -218,7 +218,7 @@ public class DemoVariables {
 
 //    Strings objects are immutable: no change is possible,
 //      only abandonement and reassignment.
-//    Memory garbage collection frees up holes in memory later   
+//    Memory garbage collection frees up holes in memory later
 //    comparing strings: using String class's equals method
         if (sHello1.equals(sHello2)) {
             System.out.println("The two strings match " + sHello1 + sHello2);
@@ -240,19 +240,40 @@ public class DemoVariables {
         for (char c : cArray2) {
             System.out.println(c);
         }
+
+//      demonstrate integer array list
+        ArrayList<Integer> weeklyTemperatures = new ArrayList<Integer>();
+        weeklyTemperatures.add(24);
+        weeklyTemperatures.add(18);
+        weeklyTemperatures.add(20);
+        weeklyTemperatures.add(28);
+//      print lowest temperature accessing by index
+        System.out.println(weeklyTemperatures.get(1));
+//      insert a new element into the list at index position 2
+        weeklyTemperatures.add(2, 29);
+//      print temperature 20 at a new index 3 instead of 2
+        System.out.println(weeklyTemperatures.get(3));
+//      print the whole list
+        for (int j = 0; j < weeklyTemperatures.size(); j++) {
+            System.out.println(weeklyTemperatures.get(j));
+        }
+//      simplified for loop
+        for (Integer temperature : weeklyTemperatures) {
+            System.out.println(temperature);
+        }
 //      demonstrate string array list
-        //Some Olympic sports 
+        //Some Olympic sports
         ArrayList<String> olympicSports = new ArrayList<String>();
         olympicSports.add("Archery");
         olympicSports.add("Boxing");
         olympicSports.add("Cricket");
         olympicSports.add("Diving");
-
-        System.out.println("There are " + olympicSports.size() + " Olympic sports in this list. They are: ");
+//      print the whole list
+        System.out.println("There are " + olympicSports.size()
+                + " Olympic sports in this list. They are: ");
         for (String sport : olympicSports) {
             System.out.println(sport);
         }
-
 //      demonstrate hash map list
         //Host cities and the year they hosted the summer Olympics
         HashMap<String, Integer> hostCities = new HashMap<String, Integer>();
